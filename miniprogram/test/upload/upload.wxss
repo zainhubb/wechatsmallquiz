@@ -1,0 +1,4 @@
+/* miniprogram/test/upload.wxss */
+button{
+    background-color: rgb(0, 197, 247);
+}

@@ -1,0 +1,55 @@
+<!--miniprogram/qa/a.wxml-->
+<view class="page start" wx:if="{{page=='start'}}">
+    <view class="warning">登陆仅用于排行榜功能，不会侵犯您的隐私</view>
+    <button bindtap="startgame" type="primary" open-type="getUserInfo">点击开始答题</button>
+</view>
+<view class="page gaming" wx:if="{{page=='gaming'}}">
+    <view class="title">
+        {{quiz.quiz}}
+    </view>
+    <view class="options">
+        <view class="option A" bindtap="chooseas" data-num="1" class="{{styleArr[0]}}">
+            A.{{quiz.options[0]}}
+        </view>
+        <view class="option B" bindtap="chooseas" data-num="2" class="{{styleArr[1]}}">
+            B.{{quiz.options[1]}}
+        </view>
+        <view class="option C" bindtap="chooseas" data-num="3" class="{{styleArr[2]}}">
+            C.{{quiz.options[2]}}
+        </view>
+        <view class="option D" bindtap="chooseas" data-num="4" class="{{styleArr[3]}}">
+            D.{{quiz.options[3]}}
+        </view>
+    </view>
+    <view class="status">
+        <view class="showAnswer" wx:if="{{isanswer[quizNum]}}">本题目答案为:{{answershower[quiz.answer-1]}}</view>
+        当前是第{{quizNum+1}}/20题
+        <text>\n</text>
+        当前得分为：{{score}}分
+    </view>
+    <view class="changeQuiz">
+        <button  class="previousQuiz" bindtap="previousQuiz" type= "primary">上一题</button>
+        <button class="nextQuiz" bindtap="nextQuiz" type = "primary">下一题</button>
+    </view>
+    <view class="endgame">
+        <button bindtap="endgame" type="primary">结束答题</button>
+    </view>
+</view>
+<view class="page end"wx:if="{{page=='end'}}">
+    <view class="rangeList">
+        <view class="text">排行榜</view>
+        <view class="rangeItem" wx:for="{{rangeList}}" wx:key="index">
+            <view class="range">{{index+1}}.</view>
+            <view class="header">
+                <image src="{{item.avatarUrl}}"></image>
+            </view>
+            <view class="nickName">{{item.nickName}}</view>
+            <view class="rangeScore">{{item.score}}分</view>
+        </view>
+    </view>
+
+    <view class="score">
+    您的最终得分为：{{score}}分
+    </view>
+    <button  bindtap="startgame" type="primary" class="restart">点击重新答题</button>
+</view>

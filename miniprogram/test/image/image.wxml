@@ -1,0 +1,33 @@
+<view class="container">
+  <view class="list">
+    <view class="listItem" wx:for="{{datalist}}" wx:key="index">
+      <view class="itemHeader">
+        <view class="headerimg">
+          <image src="{{item.header}}"></image>
+        </view>
+        <view class="text">
+          <view class="username">{{item.name}}</view>
+          <view class="time">{{item.passtime}}</view>
+        </view>
+      </view>
+      <view class="itemContent">
+      {{item.text}}
+      <image mode="widthFix" src="{{item.images}}"></image>
+      </view>
+      <view class="itemFooter">
+        <view class="dz">
+          <image src="../../images/dz.png"></image>
+          <text>{{item.up}}</text>
+        </view>
+        <view class="pl">
+          <image src="../../images/pl.png"></image>
+          <text>{{item.comment}}</text>
+        </view>
+        <view class="zf">
+          <image src="../../images/zf.png"></image>
+          <text>{{item.down}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

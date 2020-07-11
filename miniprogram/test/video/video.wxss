@@ -1,0 +1,42 @@
+.listItem{
+  width: 750rpx;
+}
+.listItem .itemHeader{
+  display: flex;
+  align-items: center;
+}
+.listItem .headerimg image{
+  width:64rpx;
+  height: 64rpx;
+  border-radius: 32rpx;
+  margin: 20rpx;
+}
+.listItem .username{
+  font-size: 30rpx;
+}
+.listItem .time{
+  font-size: 26rpx;
+  color:#ccc;
+}
+.listItem .itemContent{
+  margin: 20rpx;
+}
+.listItem .itemContent .video{
+  margin-top: 10rpx;
+}
+.listItem .itemContent .video video{
+  width: 100%;
+}
+.itemFooter{
+  display: flex;
+  border-bottom: 1px solid #ddd;
+}
+.itemFooter>view{
+  display: flex;
+  padding: 0 12px 12px;
+  color: gray;
+}
+.itemFooter>view image{
+  width:40rpx;
+  height: 40rpx;
+}
