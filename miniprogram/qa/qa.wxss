@@ -107,3 +107,7 @@
 .end .score{
     padding: 0 0 12rpx 0;
 }
+.info{
+    font-size: 24rpx;
+    color: rgb(141, 141, 141);
+}

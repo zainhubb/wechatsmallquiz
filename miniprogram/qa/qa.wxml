@@ -6,18 +6,19 @@
 <view class="page gaming" wx:if="{{page=='gaming'}}">
     <view class="title">
         {{quiz.quiz}}
+        <view class="info">类型: {{quiz.type}}</view>
     </view>
     <view class="options">
-        <view class="option A" bindtap="chooseas" data-num="1" class="{{styleArr[0]}}">
+        <view class="option" bindtap="chooseas" data-num="1" class="{{styleArr[0]}}">
             A.{{quiz.options[0]}}
         </view>
-        <view class="option B" bindtap="chooseas" data-num="2" class="{{styleArr[1]}}">
+        <view class="option" bindtap="chooseas" data-num="2" class="{{styleArr[1]}}">
             B.{{quiz.options[1]}}
         </view>
-        <view class="option C" bindtap="chooseas" data-num="3" class="{{styleArr[2]}}">
+        <view class="option" bindtap="chooseas" data-num="3" class="{{styleArr[2]}}">
             C.{{quiz.options[2]}}
         </view>
-        <view class="option D" bindtap="chooseas" data-num="4" class="{{styleArr[3]}}">
+        <view class="option" bindtap="chooseas" data-num="4" class="{{styleArr[3]}}">
             D.{{quiz.options[3]}}
         </view>
     </view>

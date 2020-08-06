@@ -10,7 +10,7 @@ Page({
         quizNum:0,//题号默认0
         quizList:[],//初始化题目对象列表
         score:0,//分数默认0
-        styleArr:["option A","option B","option C","option D"],//每题四个选项的样式
+        styleArr:["option","option","option","option"],//每题四个选项的样式
         isanswer:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],//每题是否已回答标记
         rangeList:[],//排行榜对象列表
         isanswerNum:0,//已回答过的题目数目
@@ -78,7 +78,7 @@ Page({
 
     async getQs(dbname){
         let db = this.selectDb(dbname)
-        let randomNum = parseInt(Math.random()*15990)
+        let randomNum = parseInt(Math.random()*15980)        
         //skip()设置偏移数量
         //limit()限制数量
         let result = await db.skip(randomNum).limit(20).get()
@@ -134,7 +134,6 @@ Page({
                 })
                 if(this.data.isanswerNum<20){//如果没有20题没有答满就进行下一步判断
                     if(this.data.quizNum<19){//如果20题没答满且不是第20(列表下表19)题
-                        console.log(this.data.isanswerNum);
                         // let arr = this.data.styleArr
                         // arr[num-1]="option"
                         // arr[this.data.quiz.answer-1]="option"
@@ -151,8 +150,7 @@ Page({
                         return//如果20题没打答满,但是题号已到达20题(下标19题)
                     }
                 }else{
-                    console.log(this.data.isanswerNum);
-                    console.log("游戏结束");
+ 
                     this.endgame()
                 }
             }, 1500)
@@ -194,10 +192,7 @@ Page({
                     }
                         
                 }else{
-                        console.log(this.data.isanswerNum);
-                        console.log("游戏结束");
-                        this.endgame()
-                    
+                        this.endgame() 
                 }
             }, 1500)//延迟1秒进入下一题
         };
